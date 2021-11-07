@@ -1,0 +1,167 @@
+<!--
+
+
+    <?php
+
+session_start();
+include("connection.php");
+include("functions.php");
+
+     $user_data = check_login($con);
+
+
+
+
+     Book(ISBN, Title, PublicationDate, Price, UserReviews, AuthorID, ItemNumber)
+
+     if( $bookISBN != NULL)
+        Select * FROM Books where book_ISBN = '$bookISBN'
+               
+
+                where user_name = '$user_name'
+    ?>
+
+            $bookTitle = $_POST['book_title'];
+            $bookISBN = $_POST['ISBN'];
+            $A_LN = $_POST['Author_LName'];
+            $A_FN = $_POST['Author_FName'];
+            $price = $_POST['Price'];
+//--------------------------------------------------------------
+// ISBN valid check
+    if(strln($bookISBN) = 13 && is_numeric($bookISBN))
+    {
+        $isbnS = $bookISBN;
+    }
+    if(empty($bookISBN))
+    {
+        $isbnS = "";
+    }
+    else
+    {
+        echo"ISBN13 is not valid, Please enter a Valid ISBN13 or leave blank";
+    }
+//---------------------------------------------------------------
+//Title check
+if(strln($bookTitle) > 0)
+{
+    $titleS = $bookTitle;
+}
+//---------------------------------------------------------------
+//Author First Name Check
+if(strln($A_FN) > 0 && !is_numeric($A_FN))
+{
+    $fnS = $A_FN;
+}
+//---------------------------------------------------------------
+//Author Last Name Check
+if(strln($A_LN) > 0 && !is_numeric($A-FN))
+{
+    $lnS = $L_FN;
+}
+//---------------------------------------------------------------
+//Price Check
+if(strln($price) > 0 && is_numeric($price))
+{
+    $priceS = $price;
+}
+if(empty($price))
+{
+    $priceS = "";
+}
+else
+{
+    echo" Price is not valid, Please enter a valid price or leave blank";
+}
+//---------------------------------------------------------------
+-->
+
+<script>
+    
+if(parseInt(document.getElementsByName('ISBN').value) > 0)
+{
+  
+    document.getElementById('check').checked = true;
+}  
+</script> 
+
+<!DOCTYPE html> 
+<html>
+<head>
+        <title> Update your Account Information</title>
+</head>
+<body>
+<style type = "text/css">
+    #text{
+
+        height: 35px;
+        border-radius: 5px;
+        padding: 4px;
+        border:solid thin #aaa;
+        width: 100%;
+
+    }
+    #button{
+        padding: 10px;
+        width: 100px;
+        color: rgb(0, 0, 0);
+        background-color: lightblue;
+        border: none;
+    }
+    #box{
+        background-color:grey;
+        margin: auto;
+        width: 600px;
+        padding: 20px;
+    }
+    </style>
+
+    <div id = "box">
+        <form method= "post">
+            <div style = "font-size: 20px; margin: 10px; ">Book Search</div>
+            <!-----------------------------ISBN---------------------------------------------------------->
+            <label for="fname">Book ISBN13:</label>
+            <input id = "text" type = "text" name = "ISBN"> <br></br>
+         <!--
+
+          
+         -->
+         <!---------------------------------Title------------------------------------------------------>
+           
+            <label for="fname">Book Title :</label>
+            <input  id = "text" type = "text" name = "book_title"><br></br>
+        <!--
+
+            add to php
+            $bookTitle = $_POST['book_title'];
+            $bookISBN = $_POST['ISBN'];
+            $A_LN = $_POST['Author_LName'];
+            $A_FN = $_POST['Author_FName'];
+            $price = $_POST['Price'];
+
+         -->
+
+<!--------------------------------------FirstName------------------------------------------------->
+           
+            <label for="fname">Author First Name:</label>
+            <input  id = "text" type = "text" name = "Author_FName" ><br></br>
+<!---------------------------------------LastName------------------------------------------------>
+            
+            <label for="fname">Author Last Name:</label>
+            <input  id = "text" type = "text" name = "Author_LName" ><br></br>
+<!---------------------------------------Price------------------------------------------------>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="fname">Book Price:</label>
+            <input  id = "text" type = "text" name = "Price" ><br></br>
+<!--------------------------------------------------------------------------------------->
+            <select name = "dropdown">
+                <option value = "Computer Architecture" selected>Computer Architecture</option>
+                <option value = "Java">Java</option>
+                <option value = "Discrete Mathematics">Discrete Mathematics</option>
+             </select>
+             <br><br>
+
+            <input id = "button" type = "submit"  value = "Search"><br></br>
+            
+        </form>
+</body>
+</html>
